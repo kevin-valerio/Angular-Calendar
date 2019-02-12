@@ -2,8 +2,13 @@
   <div class="ticket" *ngFor="let ticket of ticketList">
     <!--Inputs & Output allow communication between parent & child components.-->
     <!--More information: https://angular.io/guide/component-interaction-->
-    <app-ticket (archivageTicket)="archiverTicker(ticket)" (ticketDelete)="deleteTicket(ticket)"
+    <app-ticket
+            (ticketDelete)="archiverTicker(ticket)"
+            *ngIf="ticket.archived === displayTicketArchived"
                 (ticketHasBeenSelected)="ticketHasBeenSelected($event)" [ticket]="ticket"></app-ticket>
+
+
   </div>
+  <button (click)="refreshArchives()" class="button-custom">{{ archiveMessage }}</button>
 </div>
 

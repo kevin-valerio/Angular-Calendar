@@ -1,7 +1,7 @@
 import {Student} from '../models/student';
 
 
-export const TICKETS_MOCKED: Student[] = [
+export const STUDENTS_MOCKS: Student[] = [
     {
         nom: 'Dupont',
         prenom: 'Jean',

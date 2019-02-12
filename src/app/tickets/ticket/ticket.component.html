@@ -1,20 +1,29 @@
 <div class="card ticket">
-  <div (click)="selectTicket()">
-    <!-- we use the {{ }} syntax to display the data, more info: https://angular.io/guide/displaying-data-->
-    <h3>Surprising : {{ticket.title}}</h3>
-    <i class="fas fa-calendar-alt"></i> {{ticket.date | date: 'shortTime'}} &nbsp;&nbsp;
-    <i class="far fa-user"></i> {{ticket.student}}
+    <div (click)="selectTicket()">
+        <!-- we use the {{ }} syntax to display the data, more info: https://angular.io/guide/displaying-data-->
+        <h3>Surprising : {{ticket.title}}</h3>
+        <i class="fas fa-calendar-alt"></i> {{ticket.date | date: 'shortTime'}} &nbsp;&nbsp;
+        <i class="far fa-user"></i> {{ ticket.student.prenom + " " + ticket.student.nom }}
+        <br>
+
+        <div *ngIf="ticket.major === 'SI'">
+            <i class="fas fa-laptop far"></i> Major :  {{ticket.major}}
+        </div>
+        <div *ngIf="ticket.major === 'Beautifull GB'">
+            <i class="fas fa-heart-broken far"></i> Major :  {{ticket.major}}
+        </div>
+
+        <div *ngIf="ticket.major === 'Batiment'">
+            <i class="fas fa-heart-broken far"></i> Major :  {{ticket.major}}
+        </div>
+
+        <div *ngIf="ticket.major === 'GE'">
+            <i class="fas fa-heart-broken far"></i> Major :  {{ticket.major}}
+        </div>
+    </div>
+
+    <button (click)="deleteTicket()" class="btn-custom" type="submit">Delete</button>
     <br>
-
-    <div *ngIf="ticket.major === 'SI'">
-      <i class="fas fa-laptop far"></i> Major :  {{ticket.major}}
-    </div>
-    <div *ngIf="ticket.major === 'Beautifull GB'">
-      <i class="fas fa-heart-broken far"></i> Major :  {{ticket.major}}
-    </div>
-  </div>
-
-  <button class="btn-custom" (click) = "deleteTicket()" type="submit">Delete</button>
     <button (click)="archiverTicket()" class="btn-custom" type="submit">Archiver</button>
     <br>
 

@@ -9,6 +9,15 @@
         Description <br>
         <input class="input-custom" type="text" id="description" [formControlName]="'description'">
     </label>
+    <br>
+    <label for="author">
+        Student <br>
+        <select class="input-custom" id="author" [formControlName]="'author'">
+            <option *ngFor="let student of STUDENT_LIST" [value]="student">
+                {{ student.id + " - " + student.prenom + " " + student.nom}}
+            </option>
+        </select>
+    </label>
 
     <br>
     <label for="major">

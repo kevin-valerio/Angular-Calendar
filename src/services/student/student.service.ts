@@ -12,7 +12,7 @@ export class StudentService {
      * https://angular.io/docs/ts/latest/tutorial/toh-pt4.html
      */
 
-        //TODO : copy&paste here
+        // TODO : copy&paste here
     private ticketList: Ticket[] = TICKETS_MOCKED;
 
     /**

@@ -16,6 +16,9 @@ export class TicketListComponent implements OnInit {
     }
 
     ngOnInit() {
+
+
+        //test
     }
 
     ticketHasBeenSelected(hasBeenSelected: boolean) {
